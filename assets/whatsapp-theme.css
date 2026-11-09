@@ -1,0 +1,284 @@
+/* Local presentation overrides. Never filter or recolour photos, emoji or QR codes.
+   Both WDS (current WhatsApp) and legacy theme tokens are covered. */
+:root, :root * {
+  color-scheme: dark;
+  --WDS-background-wash-plain: #151412 !important;
+  --WDS-background-wash-plain-RGB: 21, 20, 18 !important;
+  --WDS-background-wash-inset: #11100e !important;
+  --WDS-background-wash-inset-RGB: 17, 16, 14 !important;
+  --WDS-background-elevated-wash-plain: #1c1a16 !important;
+  --WDS-background-elevated-wash-plain-RGB: 28, 26, 22 !important;
+  --WDS-background-elevated-wash-inset: #151412 !important;
+  --WDS-background-elevated-wash-inset-RGB: 21, 20, 18 !important;
+  --WDS-surface-default: #151412 !important;
+  --WDS-surface-default-RGB: 21, 20, 18 !important;
+  --WDS-surface-elevated-default: #1c1a16 !important;
+  --WDS-surface-elevated-default-RGB: 28, 26, 22 !important;
+  --WDS-surface-emphasized: #1c1a16 !important;
+  --WDS-surface-emphasized-RGB: 28, 26, 22 !important;
+  --WDS-surface-elevated-emphasized: #232019 !important;
+  --WDS-surface-elevated-emphasized-RGB: 35, 32, 25 !important;
+  --WDS-surface-inverse: #ded6c5 !important;
+  --WDS-surface-inverse-RGB: 222, 214, 197 !important;
+  --WDS-surface-highlight: rgba(255, 209, 0, .09) !important;
+  --WDS-surface-highlight-RGB: 255, 209, 0 !important;
+  --WDS-surface-pressed: rgba(255, 209, 0, .16) !important;
+  --WDS-content-default: #e9e1d0 !important;
+  --WDS-content-default-RGB: 233, 225, 208 !important;
+  --WDS-content-deemphasized: #a49a86 !important;
+  --WDS-content-deemphasized-RGB: 164, 154, 134 !important;
+  --WDS-content-disabled: #736d60 !important;
+  --WDS-content-action-default: #d9c99c !important;
+  --WDS-content-action-default-RGB: 217, 201, 156 !important;
+  --WDS-content-action-emphasized: #ffd100 !important;
+  --WDS-content-action-emphasized-RGB: 255, 209, 0 !important;
+  --WDS-content-external-link: #ffd100 !important;
+  --WDS-content-external-link-RGB: 255, 209, 0 !important;
+  --WDS-content-on-accent: #fff2c5 !important;
+  --WDS-content-on-accent-RGB: 255, 242, 197 !important;
+  --WDS-content-inverse: #11100e !important;
+  --WDS-content-read: #76b6df !important;
+  --WDS-components-surface-nav-bar: #12110f !important;
+  --WDS-components-surface-nav-bar-RGB: 18, 17, 15 !important;
+  --WDS-components-filter-surface-selected: #3a3018 !important;
+  --WDS-components-filter-surface-selected-RGB: 58, 48, 24 !important;
+  --WDS-systems-chat-surface-composer: #0c0b0a !important;
+  --WDS-systems-chat-surface-composer-RGB: 12, 11, 10 !important;
+  --WDS-systems-chat-surface-tray: #1b1915 !important;
+  --WDS-systems-chat-surface-tray-RGB: 27, 25, 21 !important;
+  --WDS-systems-chat-background-wallpaper: #11100e !important;
+  --WDS-systems-chat-background-wallpaper-RGB: 17, 16, 14 !important;
+  --WDS-systems-chat-foreground-wallpaper: transparent !important;
+  --WDS-systems-bubble-surface-incoming: transparent !important;
+  --WDS-systems-bubble-surface-incoming-RGB: 36, 33, 27 !important;
+  --WDS-systems-bubble-surface-outgoing: transparent !important;
+  --WDS-systems-bubble-surface-outgoing-RGB: 53, 37, 30 !important;
+  --WDS-systems-bubble-surface-system: #24211b !important;
+  --WDS-systems-bubble-surface-e2e: #302919 !important;
+  --WDS-app-wash: #11100e !important;
+  --app-background: #11100e !important;
+  --app-background-deeper: #11100e !important;
+  --app-background-stripe: transparent !important;
+  --background-default: #151412 !important;
+  --background-default-rgb: 21, 20, 18 !important;
+  --background-default-hover: #242119 !important;
+  --background-default-active: #352e1d !important;
+  --panel-background: #191713 !important;
+  --panel-background-rgb: 25, 23, 19 !important;
+  --panel-background-deep: #151412 !important;
+  --panel-background-deeper: #151412 !important;
+  --panel-background-lighter: #24211b !important;
+  --panel-background-colored: #24211b !important;
+  --panel-header-background: #191713 !important;
+  --panel-header-icon: #b8aa84 !important;
+  --panel-input-background: #0d0c0a !important;
+  --navbar-background: #12110f !important;
+  --conversation-panel-background: #11100e !important;
+  --conversation-panel-border: #494332 !important;
+  --conversation-panel-background-rgb: 17, 16, 14 !important;
+  --incoming-background: transparent !important;
+  --incoming-background-rgb: 36, 33, 27 !important;
+  --incoming-background-deeper: #181612 !important;
+  --outgoing-background: transparent !important;
+  --outgoing-background-rgb: 53, 37, 30 !important;
+  --outgoing-background-deeper: #241913 !important;
+  --message-primary: #ff80ff !important;
+  --primary: #e9e1d0 !important;
+  --primary-rgb: 233, 225, 208 !important;
+  --primary-strong: #f2e8d2 !important;
+  --primary-strong-rgb: 242, 232, 210 !important;
+  --primary-stronger: #f2e8d2 !important;
+  --primary-strongest: #fff3d5 !important;
+  --primary-muted: #a49a86 !important;
+  --primary-title: #ffd100 !important;
+  --secondary: #a49a86 !important;
+  --secondary-rgb: 164, 154, 134 !important;
+  --secondary-lighter: #a49a86 !important;
+  --secondary-stronger: #c5b99e !important;
+  --text-primary-strong: #eee4d0 !important;
+  --text-muted: #978d79 !important;
+  --text-action: #ffd100 !important;
+  --icon: #c8b98f !important;
+  --icon-lighter: #9f957f !important;
+  --icon-primary: #ffd100 !important;
+  --icon-ack: #76b6df !important;
+  --compose-background: #15130f !important;
+  --compose-panel-background: #15130f !important;
+  --compose-panel-background-hover: #211d16 !important;
+  --compose-input-background: #0c0b0a !important;
+  --compose-input-background-focused: #0c0b0a !important;
+  --compose-input-border: #655b42 !important;
+  --compose-input-border-focused: #b29a57 !important;
+  --compose-primary: #f2e8d2 !important;
+  --rich-text-panel-background: #15130f !important;
+  --input-border-active: #b29a57 !important;
+  --input-placeholder: #a49a86 !important;
+  --input-placeholder-rgb: 164, 154, 134 !important;
+  --border-default: #3e382b !important;
+  --border-strong: #655b42 !important;
+  --border-list: #302b21 !important;
+  --border-bubble: #655b42 !important;
+  --dropdown-background: #1c1a16 !important;
+  --dropdown-background-hover: #332b1b !important;
+  --dropdown-shadow: 0 3px 8px #000b !important;
+  --modal-background: #1c1a16 !important;
+  --modal-backdrop: rgba(0, 0, 0, .75) !important;
+  --drawer-background: #151412 !important;
+  --search-input-container-background: #0d0c0a !important;
+  --search-container-background: #151412 !important;
+  --search-input-background: #0d0c0a !important;
+  --picker-background: #1c1a16 !important;
+  --expressions-panel-background: #1c1a16 !important;
+  --expressions-panel-active-icon-tab: #ffd100 !important;
+  --intro-background: #151412 !important;
+  --intro-secondary: #a49a86 !important;
+  --empty-state-background: #151412 !important;
+  --avatar-background: #363026 !important;
+  --avatar-placeholder-background: #363026 !important;
+  --avatar-placeholder-primary: #d3bd86 !important;
+  --unread-marker-background: #ffd100 !important;
+  --unread-marker-text: #17120a !important;
+  --system-message-background: #262116 !important;
+  --system-message-text: #c2b48f !important;
+  --notification-biz-background: #29251b !important;
+  --notification-biz-text: #e9dfc7 !important;
+  --link: #ffd100 !important;
+  --link-preview: #cfc1a0 !important;
+  --button-primary-background: #63201c !important;
+  --button-primary-background-hover: #832b23 !important;
+  --button-primary: #ffd100 !important;
+  --button-secondary: #ffd100 !important;
+  --button-secondary-background: #24211b !important;
+  --button-secondary-border: #655b42 !important;
+  --button-round-background-inverted: #2d261b !important;
+  --splashscreen-startup-background: #11100e !important;
+  --splashscreen-startup-background-plain: #11100e !important;
+  --splashscreen-primary-title: #ffd100 !important;
+  --splashscreen-secondary-lighter: #a49a86 !important;
+  --splashscreen-progress-primary: #b69447 !important;
+  --splashscreen-progress-background: #343026 !important;
+  --chat-bubble-border-radius: 3px !important;
+  --font-family-default: 'WoW UI', Arial, sans-serif !important;
+  --font-family-system-fds: 'WoW UI', Arial, sans-serif !important;
+}
+
+html, body, #app, .app-wrapper-web {
+  background-color: #11100e !important;
+  color: #e9e1d0 !important;
+  font-family: 'WoW UI', Arial, sans-serif !important;
+  font-synthesis: none;
+}
+#app { height: 100vh !important; width: 100vw !important; top: 0 !important; }
+#app .app-wrapper-web {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  animation: none !important;
+  opacity: 1 !important;
+}
+#side, #pane-side, #app [role='dialog'], #app [role='menu'] {
+  background: #121210 url('{{MARBLE}}') repeat !important;
+}
+#side { border-right: 1px solid #625a48 !important; }
+#side div.x6nvzda.x4i4b9w.x1abdmlv {
+  background: #29251b !important;
+  color: #e9e1d0 !important;
+  border: 1px solid #655b42 !important;
+  border-radius: 2px !important;
+}
+#main { background: #10100f !important; }
+#app header, #main footer {
+  background: #292720 url('{{ROCK}}') repeat !important;
+  background-size: 512px !important;
+  border-color: #655e4d !important;
+  box-shadow: inset 0 1px #ffffff0b, 0 1px #000 !important;
+}
+#app :is(h1, h2, h3, [role='heading']) {
+  color: #ffd100 !important;
+  font-family: 'WoW UI', serif !important;
+  font-weight: 400 !important;
+  text-shadow: 1px 1px #000;
+}
+#pane-side [role='row'] { border-bottom: 1px solid #332f26 !important; }
+#pane-side [role='row']:hover { background-color: #28241a !important; }
+#pane-side [aria-selected='true'] { background: linear-gradient(90deg, #70562466, #392b1433) !important; }
+/* Contact-name spans only. Preview snippets, emoji and all images keep their
+   existing dimensions, colours and clipping. No generic img/button selectors. */
+#pane-side span[title], #main header span[title] {
+  color: #ffd100 !important;
+  font: 400 15px 'WoW UI', serif !important;
+  text-shadow: 1px 1px #000;
+}
+#app :is(button, [role='button']) { font-family: 'WoW UI', Arial, sans-serif !important; }
+/* Added only to small icon buttons, never row actions or the contact header.
+   Paint inside the existing box so we cannot change WhatsApp's layout. */
+#app [data-wow-control] {
+  background: #27251e url('{{ROCK}}') center / 256px !important;
+  border: 0 !important;
+  border-radius: 2px !important;
+  box-shadow: inset 0 0 0 1px #080807, inset 0 0 0 2px #6b6250 !important;
+  color: #d7bc74 !important;
+}
+#app [data-wow-control]:hover { box-shadow: inset 0 0 0 1px #b39b55, inset 0 0 0 2px #6b6250 !important; }
+#app [data-wow-control][aria-pressed='true'], #app [data-wow-control][aria-selected='true'] { color: #ffd100 !important; }
+#app :is(button, [role='button']):focus-visible { outline-color: #ffd100 !important; }
+#app :is(input, textarea, [contenteditable='true']) {
+  font-family: 'Arial Narrow', Arial, sans-serif !important;
+  color: #eee1c9 !important;
+  caret-color: #eee1c9 !important;
+}
+#app :is(input, textarea) { background-color: #0d0c0a !important; border-color: #655b42 !important; }
+#main footer [contenteditable='true'] {
+  color: #efc3ea !important;
+  font: 400 18px/1.5 'WoW UI', Arial, sans-serif !important;
+}
+#main :is([data-pre-plain-text], .selectable-text, [data-testid='msg-text']) {
+  color: #efc3ea !important;
+  font-family: 'WoW UI', Arial, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  font-synthesis: none !important;
+  line-height: 1.5 !important;
+  text-shadow: none !important;
+}
+/* Hide old labels too when applying this stylesheet to an existing session. */
+#main [data-wow-whisper]::before { content: none !important; }
+#main [data-icon='tail-in'], #main [data-icon='tail-out'] { opacity: 0 !important; }
+#app a { color: #e6c467 !important; }
+/* Cover only the redundant wordmark area; the header's existing actions and
+   accessible name are preserved. This is scoped to the chat-list column. */
+#app div:has(> #side) { position: relative; }
+#app div:has(> #side)::before {
+  content: 'Chats';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150px;
+  height: 64px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  background: #292720 url('{{ROCK}}') repeat;
+  background-size: 512px;
+  color: #ffd100;
+  font: 400 18px 'WoW UI', serif;
+  text-shadow: 1px 1px #000;
+  pointer-events: none;
+  z-index: 3;
+}
+#app [data-ref], #app [data-testid='qrcode'] { background: white !important; border-radius: 2px !important; padding: 8px !important; }
+/* Public link-device surfaces use literal StyleX colours. */
+#app .xe4h88v { background: #111 url('{{MARBLE}}') repeat !important; --xkbennp: #e9e1d0 !important; }
+#app .x12peec7:not([data-ref]) { background: #191815 !important; border: 1px solid #807762 !important; border-radius: 2px !important; }
+#app .xowvryd { color: #e9e1d0 !important; }
+#app .xe4h88v :is(div, span, p, li, label):not([data-ref], [data-ref] *) { color: #e9e1d0 !important; }
+::-webkit-scrollbar { width: 10px !important; height: 10px !important; }
+::-webkit-scrollbar-track { background: #0b0a08 !important; }
+::-webkit-scrollbar-thumb { background: #736648 !important; border: 2px solid #0b0a08 !important; border-radius: 2px !important; }
+::selection { background: #6b552c !important; color: #fff3d0 !important; }

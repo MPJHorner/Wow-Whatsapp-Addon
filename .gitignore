@@ -1,0 +1,15 @@
+/target/
+/dist/
+.DS_Store
+/node_modules/
+/tmp/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+

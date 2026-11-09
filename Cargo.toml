@@ -1,0 +1,36 @@
+[package]
+name = "wow-chat"
+version = "0.3.0"
+edition = "2024"
+description = "WoW Whisper: a World of Warcraft-styled WhatsApp desktop companion for macOS and Windows"
+license = "MIT"
+repository = "https://github.com/MPJHorner/Wow-Whatsapp-Addon"
+readme = "README.md"
+publish = false
+
+[dependencies]
+anyhow = "1"
+base64 = "0.23"
+dirs = "6"
+global-hotkey = "0.10"
+muda = "0.21"
+serde_json = "1"
+tao = "0.37"
+url = "2"
+wry = "0.57"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = "0.6"
+objc2-app-kit = { version = "0.3", default-features = false, features = ["std", "libc", "NSWorkspace", "NSRunningApplication", "NSWindow", "NSEvent", "NSImage", "NSImageRep", "NSBitmapImageRep"] }
+objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSData", "NSDictionary", "NSError"] }
+objc2-web-kit = { version = "0.3", default-features = false, features = ["std", "WKSnapshotConfiguration", "WKWebView", "block2"] }
+block2 = "0.6"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_Foundation", "Win32_UI_WindowsAndMessaging", "Win32_System_Threading"] }
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+

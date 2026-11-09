@@ -1,0 +1,32 @@
+WoW Whisper — World of Warcraft-styled WhatsApp companion
+https://github.com/MPJHorner/Wow-Whatsapp-Addon
+
+macOS 14+: extract the ZIP, drag WoW Whisper.app to Applications, then open it.
+The app is ad-hoc signed, not notarized. If macOS blocks it, review Apple's
+instructions: https://support.apple.com/102445
+Only use Privacy & Security > Open Anyway if you trust this download.
+
+Windows 10/11 x64: extract the entire ZIP and run wow-chat.exe.
+Install Microsoft's Evergreen WebView2 Runtime if it is missing:
+https://developer.microsoft.com/microsoft-edge/webview2/
+This community build is not Authenticode-signed; Windows may show a warning.
+
+Link through WhatsApp on your phone > Linked devices > Link a device.
+Use WoW in windowed or borderless mode. No WoW restart or AddOns folder needed.
+Ctrl+Shift+W toggles the panel (Control on Mac, not Command).
+Drag the header to move; drag the bottom-right grip to resize.
+Click the chat to reply; click back into WoW to play.
+The panel follows WoW and hides when you switch away. No Dock/taskbar icon.
+If hidden, use the hotkey. The X button quits; restart the app to reopen it.
+
+This is a separate desktop companion, not an in-process Lua addon.
+Keep it visible for live messages. Hidden toast notifications, calls, external
+links and attachment downloads are not supported. Voice messages depend on
+WhatsApp Web/OS support and normal microphone permission.
+
+Uninstall by quitting and deleting the app/extracted folder. Also unlink it
+from WhatsApp > Linked devices to revoke the session. Deleting the executable
+does not automatically delete the OS-managed browser profile.
+
+License: original source MIT; Blizzard art/font and WhatsApp marks excluded.
+Read the included notices and the repository README for full details.

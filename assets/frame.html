@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; font-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <title>WhatsApp</title>
+  <style>
+    @font-face { font-family: 'WoW UI'; src: url('{{UI_FONT}}') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+    :root { color-scheme: dark; --border: url('{{DIALOG_BORDER}}'); }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; overflow: hidden; }
+    body { color: #eee2c6; font: 12px 'WoW UI', serif; background: #11100e; user-select: none; font-synthesis: none; }
+    .frame { position: relative; height: 100%; background: #292621 url('{{ROCK}}') repeat; background-size: 512px; }
+    header { position: absolute; inset: 0 20px auto; height: 54px; cursor: grab; }
+    h1 { position: absolute; left: 50%; top: 2px; transform: translateX(-50%); width: 210px; height: 50px; display: grid; place-items: center; padding: 3px 0 0; margin: 0; color: #ffd100; font: 16px/1 'WoW UI', serif; text-shadow: 1px 1px #000; background: url('{{DIALOG_HEADER}}') center / 100% 100% no-repeat; }
+    .tools { position: absolute; inset: 15px 3px auto; display: flex; gap: 4px; align-items: center; }
+    .tools #pin { margin-left: auto; }
+    button { display: grid; place-items: center; width: 26px; height: 24px; padding: 0; border: 4px solid transparent; border-image: url('{{BUTTON_UP}}') 5 fill / 4px / 0 stretch; border-radius: 0; background: transparent; color: #ffd100; cursor: pointer; font: 11px 'WoW UI', serif; text-shadow: 1px 1px #000; }
+    button:hover { color: #fff0a0; filter: brightness(1.25); }
+    button:active { border-image-source: url('{{BUTTON_DOWN}}'); }
+    button:focus-visible { outline: 1px solid #ffd100; outline-offset: 2px; }
+    button[aria-pressed='false'] { filter: grayscale(1); color: #a8a291; }
+    button svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+    .close { width: 30px; height: 30px; border: 0; box-shadow: none; background: url('{{CLOSE_UP}}') center/32px 32px no-repeat; }
+    .close:hover { background: url('{{CLOSE_UP}}') center/32px 32px no-repeat; filter: brightness(1.35); }
+    .close:active { background-image: url('{{CLOSE_DOWN}}'); box-shadow: none; }
+    .well { position: absolute; left: 20px; top: 54px; right: 20px; bottom: 30px; background: #11100e; box-shadow: 0 0 0 1px #070706, 0 0 0 2px #777365, 0 0 0 3px #131211; }
+    #status { position: absolute; left: 26px; right: 65px; bottom: 15px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font: 10px Arial, sans-serif; color: #d4bc80; line-height: 12px; }
+    #status:empty { display: none; }
+    .edges { position: absolute; inset: 0; pointer-events: none; }
+    .edge { position: absolute; background-image: var(--border); background-size: 384px 48px; }
+    .left { left: 0; top: 48px; bottom: 48px; width: 48px; background-position: 0 0; background-repeat: repeat-y; }
+    .right { right: 0; top: 48px; bottom: 48px; width: 48px; background-position: -48px 0; background-repeat: repeat-y; }
+    .corner { width: 48px; height: 48px; background-repeat: no-repeat; }
+    .tl { top: 0; left: 0; background-position: -192px 0; }
+    .tr { top: 0; right: 0; background-position: -240px 0; }
+    .bl { bottom: 0; left: 0; background-position: -288px 0; }
+    .br { bottom: 0; right: 0; background-position: -336px 0; }
+    .horizontal { position: absolute; left: 48px; right: 48px; height: 48px; overflow: hidden; }
+    .horizontal::before { content: ''; position: absolute; top: 0; left: 100%; width: 48px; height: 100vw; background: var(--border) repeat-y; background-size: 384px 48px; transform: rotate(90deg); transform-origin: 0 0; }
+    .top { top: 0; } .bottom { bottom: 0; }
+    .top::before { background-position: -96px 0; }
+    .bottom::before { background-position: -144px 0; }
+    #resize { position: absolute; bottom: 4px; right: 7px; height: 26px; width: 26px; z-index: 2; cursor: nwse-resize; touch-action: none; color: #d1b66f; }
+    #resize svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; filter: drop-shadow(1px 1px #000); }
+    #resize:hover { color: #ffd100; }
+  </style>
+</head>
+<body>
+  <main class="frame">
+    <div class="well" aria-hidden="true"></div>
+    <header>
+      <h1>WhatsApp</h1>
+      <nav class="tools" aria-label="Window controls">
+        <button data-action="zoom-out" title="Smaller text" aria-label="Smaller text">A−</button>
+        <button data-action="zoom-in" title="Larger text" aria-label="Larger text">A+</button>
+        <button data-action="reload" title="Reload" aria-label="Reload"><svg viewBox="0 0 16 16"><path d="M13 6a5 5 0 1 0 0 4M13 2v4H9"/></svg></button>
+        <button id="pin" data-action="pin" title="Keep above WoW" aria-label="Keep above WoW" aria-pressed="true"><svg viewBox="0 0 16 16"><path d="m6 2 6 6-2 1-1 3-5-5 3-1ZM6 10l-4 4"/></svg></button>
+        <button data-action="toggle" title="Hide ({{HOTKEY}})" aria-label="Hide">−</button>
+        <button class="close" data-action="quit" title="Close" aria-label="Close"></button>
+      </nav>
+    </header>
+    <div id="status" role="status"></div>
+    <div class="edges" aria-hidden="true"><span class="edge left"></span><span class="edge right"></span><span class="horizontal top"></span><span class="horizontal bottom"></span><span class="edge corner tl"></span><span class="edge corner tr"></span><span class="edge corner bl"></span><span class="edge corner br"></span></div>
+    <div id="resize" title="Drag to resize" aria-label="Drag to resize" role="separator"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 20 12-12M13 20l7-7M18 20l2-2"/></svg></div>
+  </main>
+  <script>
+    document.querySelectorAll('[data-action]').forEach(button => button.addEventListener('click', () => {
+      if (window.ipc) window.ipc.postMessage(button.dataset.action);
+    }));
+    document.querySelector('header').addEventListener('mousedown', event => {
+      if (event.button === 0 && !event.target.closest('button') && window.ipc) window.ipc.postMessage('drag');
+    });
+    const resize = document.getElementById('resize');
+    resize.addEventListener('pointerdown', event => {
+      if (event.button !== 0) return;
+      event.preventDefault();
+      if (window.ipc) window.ipc.postMessage('resize-start');
+    });
+  </script>
+</body>
+</html>
