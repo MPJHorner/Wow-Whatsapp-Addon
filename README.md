@@ -9,6 +9,7 @@ A free desktop companion for **Windows and macOS**, built in Rust.
 
 [![Build](https://github.com/MPJHorner/Wow-Whatsapp-Addon/actions/workflows/build.yml/badge.svg)](https://github.com/MPJHorner/Wow-Whatsapp-Addon/actions/workflows/build.yml)
 [![Latest release](https://img.shields.io/github/v/release/MPJHorner/Wow-Whatsapp-Addon?color=c8a45d&label=download)](https://github.com/MPJHorner/Wow-Whatsapp-Addon/releases/latest)
+[![Total release asset downloads](https://img.shields.io/github/downloads/MPJHorner/Wow-Whatsapp-Addon/total?color=c8a45d&label=downloads)](https://github.com/MPJHorner/Wow-Whatsapp-Addon/releases "All release asset downloads, including checksum files; not unique users")
 [![Source license: MIT](https://img.shields.io/badge/source-MIT-c8a45d)](LICENSE)
 [![Platforms](https://img.shields.io/badge/macOS%20%7C%20Windows-Rust-242424)](#download)
 
