@@ -146,3 +146,53 @@ tracked folders. Review and redact any diagnostic artifact before sharing it.
 
 See [RELEASING.md](RELEASING.md) for automatic SemVer bumps, native builds,
 public ZIP downloads, checksum generation and failure recovery.
+
+## GitHub Pages website
+
+The public site is <https://mpjhorner.github.io/Wow-Whatsapp-Addon/>. Its source is
+in `site/`, and its build uses only Node's standard library:
+
+```sh
+node scripts/build-site.cjs
+node scripts/check-site.cjs
+python3 -m http.server 8000 --directory dist/site
+```
+
+The build embeds readable demo transcripts, copies the existing Blizzard assets
+and emits the homepage, installation guide, custom 404 page and sitemap. The
+Website workflow checks changes in pull requests and publishes changes from
+`main` using GitHub Pages. No Sites-hosting project, framework server, database,
+private token or paid hosting service is required. GitHub Pages is free for public
+repositories under [GitHub's documented plans](https://docs.github.com/en/pages/getting-started-with-github-pages).
+
+The content and metadata target real questions such as “best WoW addon for
+WhatsApp” with direct, factual answers. Canonical URLs, social previews,
+SoftwareApplication metadata and a sitemap describe the same visible product.
+There are no invented ratings, hidden keywords or instructions to AI crawlers.
+This follows [Google's guidance for generative AI search](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide);
+indexing, rankings and AI-answer inclusion are not guaranteed.
+
+`site/demos.json` owns the three fictional conversations. Use
+`node scripts/preview.cjs --scenario dinner-aggro` (or `date-night` / `keyboard-cat`)
+to generate a standalone 1000 × 730 production-frame preview in `dist/`. Capture
+that frame to update its screenshot. `site/social-card.html` is the source for the
+1200 × 630 social-preview artwork; render it against the built asset URLs. Never
+use linked-account screenshots for public website assets.
+
+Browser checks cover 320–1440px layouts, demo tabs and keyboard navigation,
+transcripts, dialog close/focus return, mobile navigation, installation links,
+no-JavaScript downloads and GitHub API rate-limit fallback. Static checks validate
+local links, anchors, metadata, schema, assets and the sitemap. The site's public
+release API fetch never includes a private token; normal download links work even
+when that fetch fails. The on-page count includes ZIP downloads for the latest
+release only. The README badge counts all assets across all releases, including
+checksum files. Neither represents unique users or confirmed installations.
+
+### Visits and measurement
+
+Repository maintainers can see views and unique visitors for the last 14 days at
+[Insights → Traffic](https://github.com/MPJHorner/Wow-Whatsapp-Addon/graphs/traffic).
+These are GitHub repository statistics, not analytics for the GitHub Pages website.
+See [GitHub's traffic documentation](https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository/viewing-traffic-to-a-repository).
+The website does not add visitor tracking or a third-party hit counter. A counter
+based on badge image requests would not be a reliable count of unique page visits.

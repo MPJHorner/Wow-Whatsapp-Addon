@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WoW WhatsApp Addon for Mac &amp; Windows | WoW Whisper</title>
+    <meta
+      name="description"
+      content="Use WhatsApp while playing World of Warcraft. WoW Whisper is a free Warcraft-styled desktop companion for Mac and Windows. Explore the demos and download."
+    />
+    <meta name="theme-color" content="#151714" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link
+      rel="canonical"
+      href="https://mpjhorner.github.io/Wow-Whatsapp-Addon/"
+    />
+    <link rel="icon" href="assets/crest.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="sitemap.xml" type="application/xml" />
+    <link
+      rel="preload"
+      href="assets/wow/BlizzQuadrata.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WoW Whisper" />
+    <meta
+      property="og:title"
+      content="Real life just whispered. | WoW Whisper"
+    />
+    <meta
+      property="og:description"
+      content="WhatsApp for your raid night. A free Warcraft-styled desktop companion for Mac and Windows. Your chats, dressed for Azeroth."
+    />
+    <meta
+      property="og:url"
+      content="https://mpjhorner.github.io/Wow-Whatsapp-Addon/"
+    />
+    <meta
+      property="og:image"
+      content="https://mpjhorner.github.io/Wow-Whatsapp-Addon/assets/social-card.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="WoW Whisper: WhatsApp for World of Warcraft, with a fictional raid-night chat demo"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {{APP_SCHEMA}}
+    </script>
+    <script src="app.js" defer></script>
+    <noscript
+      ><style>
+        .demo-panel[hidden] {
+          display: grid;
+        }
+        .demo-tabs {
+          display: none;
+        }
+      </style></noscript
+    >
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="WoW Whisper home"
+        ><img src="assets/crest.svg" width="40" height="44" alt="" /><span
+          >WoW Whisper<small>A WHATSAPP COMPANION</small></span
+        ></a
+      >
+      <button
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="main-nav"
+        type="button"
+      >
+        Menu <span aria-hidden="true">☰</span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="#encounters">The whispers</a><a href="#features">Features</a
+        ><a href="install/">Install</a><a href="#faq">FAQ</a
+        ><a
+          href="https://github.com/MPJHorner/Wow-Whatsapp-Addon"
+          class="nav-source"
+          >GitHub ↗</a
+        ><a class="game-button compact" href="#download">Download free</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero-art"
+          src="assets/azeroth-evening.jpg"
+          width="1672"
+          height="941"
+          alt=""
+          fetchpriority="high"
+        />
+        <div class="hero-inner wrap">
+          <div class="hero-copy">
+            <p class="eyebrow">WHATSAPP FOR WORLD OF WARCRAFT</p>
+            <h1 id="hero-title">Real life<br />just <em>whispered.</em></h1>
+            <p class="hero-description">
+              Your raid. Your people. One less reason to tab out.<br
+                class="desktop-break"
+              />
+              Keep WhatsApp beside WoW, dressed for Azeroth.
+            </p>
+            <div class="hero-actions">
+              <a class="game-button" href="#download"
+                >Get WoW Whisper <span aria-hidden="true">↓</span></a
+              ><a class="text-link" href="#encounters"
+                >See the whispers <span aria-hidden="true">↘</span></a
+              >
+            </div>
+            <p class="hero-note">
+              Free &amp; open source <span>◆</span> macOS &amp; Windows
+            </p>
+          </div>
+          <figure class="hero-window">
+            <a
+              href="assets/demo-date-night.png"
+              data-zoom="date-night"
+              aria-label="Enlarge the fictional date-night demo"
+              ><img
+                src="assets/demo-date-night.png"
+                width="1000"
+                height="730"
+                alt="WoW WhatsApp addon-style panel with a fictional date-night conversation, profile pictures and classic Warcraft borders"
+                fetchpriority="high"
+            /></a>
+            <figcaption>
+              <span class="quest-dot" aria-hidden="true">!</span> New quest
+              discovered: maintain a social life.<small
+                >Fictional conversation · Sample chat layout</small
+              >
+            </figcaption>
+          </figure>
+        </div>
+        <div class="hero-bottom wrap">
+          <span>Original Warcraft UI textures</span
+          ><span>No Dock or taskbar entry</span><span>No WoW restart</span
+          ><span>Ctrl + Shift + W</span>
+        </div>
+      </section>
+      <section class="intro wrap section" aria-labelledby="intro-title">
+        <div>
+          <p class="eyebrow">A LITTLE MORE /WHISPER. A LITTLE LESS ALT-TAB.</p>
+          <h2 id="intro-title">
+            WhatsApp in WoW.<br />With the right kind of <em>character.</em>
+          </h2>
+        </div>
+        <div class="intro-copy">
+          <p>
+            <strong
+              >WoW Whisper is a free, open-source WhatsApp desktop companion for
+              World of Warcraft on Mac and Windows.</strong
+            >
+            It brings official WhatsApp Web into a movable, resizable panel with
+            the metalwork, stone textures and gold lettering you know.
+          </p>
+          <p>
+            It runs separately from the game. No Lua installation, no game-file
+            changes. Just link your phone, keep WoW windowed or borderless, and
+            keep your people close.
+          </p>
+          <a class="text-link" href="install/"
+            >Your installation quest log <span aria-hidden="true">→</span></a
+          >
+        </div>
+      </section>
+      <div class="ornament wrap" aria-hidden="true"><span>◆</span></div>
+      <section
+        class="encounters section wrap"
+        id="encounters"
+        aria-labelledby="encounters-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MESSAGES FROM OUTSIDE AZEROTH</p>
+            <h2 id="encounters-title">
+              The real world<br />has <em>encounters</em> too.
+            </h2>
+          </div>
+          <p>
+            Boss mechanics are predictable.<br />These people have your phone
+            number.
+          </p>
+        </div>
+        <div class="demo-tabs" role="tablist" aria-label="Fictional chat demos">
+          {{TABS}}
+        </div>
+        <div class="demo-panels">{{GALLERY}}</div>
+      </section>
+      <section
+        class="features section"
+        id="features"
+        aria-labelledby="features-title"
+      >
+        <div class="wrap features-inner">
+          <div class="features-heading">
+            <p class="eyebrow">EQUIPPED FOR YOUR EVENING</p>
+            <h2 id="features-title">
+              Fits your UI.<br />Keeps your <em>people.</em>
+            </h2>
+            <p>
+              Stone, steel and familiar whispers. The Warcraft treatment,
+              without starting your conversations from scratch.
+            </p>
+            <div class="item-tooltip">
+              <span class="item-quality">WoW Whisper</span
+              ><span>Binds when linked</span><span>Equip: keep in touch</span
+              ><small>“One more pull” remains a terrible estimate.</small>
+            </div>
+          </div>
+          <div class="feature-list">
+            <article>
+              <span class="feature-rune" aria-hidden="true">✦</span>
+              <div>
+                <h3>Your actual WhatsApp</h3>
+                <p>
+                  Existing chats, groups and contact photos through official
+                  WhatsApp Web. Link by QR code; your friends don't need another
+                  app.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span class="feature-rune" aria-hidden="true">◈</span>
+              <div>
+                <h3>A window that knows its place</h3>
+                <p>
+                  Shows over WoW, hides when you switch away, and returns
+                  without taking keyboard focus. Drag it, resize it, pin it.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span class="feature-rune" aria-hidden="true">♫</span>
+              <div>
+                <h3>More than “brb”</h3>
+                <p>
+                  WhatsApp supplies emoji, pictures and voice-note controls.
+                  Audio and recording depend on WebView support and microphone
+                  permission.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span class="feature-rune" aria-hidden="true">⌘</span>
+              <div>
+                <h3>Built lightly, in Rust</h3>
+                <p>
+                  Uses your system's WebView. No project relay server, custom
+                  messaging protocol or app analytics. The source is yours to
+                  inspect.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="hotkey wrap" aria-label="Show or hide shortcut">
+        <div>
+          <p class="eyebrow">YOUR MOST USEFUL DEFENSIVE COOLDOWN</p>
+          <h2>A whisper away.<br />A shortcut out of the way.</h2>
+        </div>
+        <div class="key-combo">
+          <kbd>Ctrl</kbd><span>+</span><kbd>Shift</kbd><span>+</span
+          ><kbd>W</kbd>
+          <p>Show or hide. Control on Mac, too.</p>
+        </div>
+      </section>
+      <section class="setup section wrap" aria-labelledby="setup-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">QUEST ACCEPTED</p>
+            <h2 id="setup-title">
+              Three steps.<br /><em>Zero</em> game restarts.
+            </h2>
+          </div>
+          <a class="text-link" href="install/"
+            >Full installation guide <span aria-hidden="true">→</span></a
+          >
+        </div>
+        <ol class="quest-steps">
+          <li>
+            <span class="step-number">I</span>
+            <h3>Loot the download</h3>
+            <p>
+              Choose your Mac or Windows build. Extract the ZIP and open WoW
+              Whisper.
+            </p>
+          </li>
+          <li>
+            <span class="step-number">II</span>
+            <h3>Link your phone</h3>
+            <p>
+              WhatsApp → Linked devices → Link a device. Scan the QR code in the
+              app.
+            </p>
+          </li>
+          <li>
+            <span class="step-number">III</span>
+            <h3>Back to the raid</h3>
+            <p>
+              Use windowed or borderless WoW. Keep the panel visible for live
+              messages.
+            </p>
+          </li>
+        </ol>
+      </section>
+      <section
+        class="downloads section"
+        id="download"
+        aria-labelledby="download-title"
+      >
+        <div class="wrap download-inner">
+          <p class="eyebrow">ADD TO YOUR INVENTORY</p>
+          <h2 id="download-title">Good loot.<br /><em>No subscription.</em></h2>
+          <p class="download-lead">
+            Free builds, straight from GitHub. Pick your platform.
+          </p>
+          <p class="release-status" id="release-status">
+            <a
+              href="https://github.com/MPJHorner/Wow-Whatsapp-Addon/releases/latest"
+              >View the latest release ↗</a
+            >
+          </p>
+          <div class="download-grid">
+            <article>
+              <span class="platform-icon" aria-hidden="true">⌘</span>
+              <p class="platform-label">macOS · APPLE SILICON</p>
+              <h3>For your Mac.</h3>
+              <p>M-series chip · macOS 14+</p>
+              <a
+                class="game-button"
+                href="https://github.com/MPJHorner/Wow-Whatsapp-Addon/releases/latest/download/WoW-Whisper-macOS-arm64.zip"
+                >Download Apple Silicon <span aria-hidden="true">↓</span></a
+              >
+            </article>
+            <article>
+              <span class="platform-icon" aria-hidden="true">⌘</span>
+              <p class="platform-label">macOS · INTEL</p>
+              <h3>For your other Mac.</h3>
+              <p>Intel processor · macOS 14+</p>
+              <a
+                class="game-button"
+                href="https://github.com/MPJHorner/Wow-Whatsapp-Addon/releases/latest/download/WoW-Whisper-macOS-x64.zip"
+                >Download Intel <span aria-hidden="true">↓</span></a
+              >
+            </article>
+            <article>
+              <span class="platform-icon windows-icon" aria-hidden="true"
+                >⊞</span
+              >
+              <p class="platform-label">WINDOWS · x64</p>
+              <h3>For your rig.</h3>
+              <p>Windows 10/11 · WebView2</p>
+              <a
+                class="game-button"
+                href="https://github.com/MPJHorner/Wow-Whatsapp-Addon/releases/latest/download/WoW-Whisper-Windows-x64.zip"
+                >Download Windows <span aria-hidden="true">↓</span></a
+              >
+            </article>
+          </div>
+          <p class="download-note">
+            Community builds: Mac apps are ad-hoc signed, not notarized; Windows
+            apps are unsigned.<br />Read the
+            <a href="install/">installation guide</a> for operating-system
+            prompts.
+            <a
+              href="https://github.com/MPJHorner/Wow-Whatsapp-Addon/releases/latest/download/SHA256SUMS.txt"
+              >Check your download's checksum ↗</a
+            >
+          </p>
+        </div>
+      </section>
+      <section class="faq section wrap" id="faq" aria-labelledby="faq-title">
+        <div class="faq-heading">
+          <p class="eyebrow">ASK THE INNKEEPER</p>
+          <h2 id="faq-title">Before you<br /><em>join the party.</em></h2>
+          <p>What it does. How it connects.<br />Where the edges are.</p>
+          <a
+            class="text-link"
+            href="https://github.com/MPJHorner/Wow-Whatsapp-Addon/issues"
+            >Found a bug? Report it ↗</a
+          >
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>What is the best WoW addon for WhatsApp?</summary>
+            <div>
+              <p>
+                WoW Whisper is designed for players who want a Warcraft-styled
+                WhatsApp panel beside windowed or borderless World of Warcraft
+                on Mac or Windows. It combines familiar UI styling, existing
+                WhatsApp chats and a show/hide shortcut. The best fit depends on
+                how you play: check the supported systems and limitations before
+                installing.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Is this a real World of Warcraft addon?</summary>
+            <div>
+              <p>
+                It is a separate Rust desktop companion with an addon-like
+                appearance. There is no Lua addon, CurseForge installation or
+                Interface/AddOns folder. It hosts official WhatsApp Web and does
+                not change game files, read game memory or automate gameplay. No
+                WoW restart is required.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Can I use WhatsApp in WoW on Mac and Windows?</summary>
+            <div>
+              <p>
+                Yes. Download builds target macOS 14+ on Apple Silicon and
+                Intel, and Windows 10/11 x64 with Microsoft WebView2. Use WoW in
+                windowed or borderless mode. Exclusive fullscreen, separate
+                macOS fullscreen Spaces, Windows on ARM and Linux are not
+                supported release targets.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Does it work with WoW Retail and Classic?</summary>
+            <div>
+              <p>
+                WoW Whisper does not depend on the game's Lua API. Its
+                foreground detector recognises the World of Warcraft Mac bundle
+                and common Retail, Classic and test-client executables on
+                Windows. Each client and operating-system combination still
+                needs testing. Use windowed or borderless mode and report an
+                unrecognised client through GitHub.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Will messages arrive while I'm raiding?</summary>
+            <div>
+              <p>
+                Keep the panel connected and visible while WoW is in front.
+                WhatsApp Web receives messages; incoming messages do not
+                intentionally take keyboard focus. Hidden toast notifications
+                are not implemented. An offline or sleeping computer, or a
+                suspended WebView, cannot be relied on for delivery.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              What about profile pictures, emoji, images and audio?
+            </summary>
+            <div>
+              <p>
+                WhatsApp Web supplies contact photos, emoji, images and
+                voice-note controls. Recording needs normal microphone
+                permission and WebView support. Media flows still need manual
+                testing on each OS; Windows linked-account and game testing
+                remains outstanding. Calls, camera, screen sharing,
+                external-link opening and attachment downloads are not
+                supported.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>How does it connect, and is it official?</summary>
+            <div>
+              <p>
+                The app loads https://web.whatsapp.com in the system WebView.
+                WhatsApp handles linking, messages and its encryption. There is
+                no project relay server or custom WhatsApp protocol. This is an
+                independent, unaudited fan project, unaffiliated with Blizzard,
+                WhatsApp or Meta. It cannot promise vendor approval or ban-free
+                use. Revoke the session at any time from Linked devices on your
+                phone.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>Is WoW Whisper free and open source?</summary>
+            <div>
+              <p>
+                Yes. Original code and documentation use the MIT license.
+                Blizzard's artwork and font, WhatsApp's service and trademarks,
+                and third-party dependencies retain their own rights and
+                licenses. Attribution does not grant redistribution rights. See
+                the
+                <a
+                  href="https://github.com/MPJHorner/Wow-Whatsapp-Addon/blob/main/THIRD_PARTY_NOTICES.md"
+                  >full third-party notices</a
+                >.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="last-whisper wrap">
+        <span aria-hidden="true">“</span>
+        <p>Your friends don't have<br />to be in your guild.</p>
+        <a class="game-button" href="#download"
+          >Keep them in the party <span aria-hidden="true">↓</span></a
+        >
+      </section>
+    </main>
+    <footer class="site-footer wrap">
+      <div class="footer-top">
+        <a class="brand" href="./"
+          ><img src="assets/crest.svg" width="34" height="38" alt="" /><span
+            >WoW Whisper<small
+              >BUILT FOR RAID NIGHT. AND THE REST OF LIFE.</small
+            ></span
+          ></a
+        >
+        <nav aria-label="Footer">
+          <a href="install/">Install guide</a
+          ><a href="https://github.com/MPJHorner/Wow-Whatsapp-Addon"
+            >Source code</a
+          ><a
+            href="https://github.com/MPJHorner/Wow-Whatsapp-Addon/blob/main/SECURITY.md"
+            >Security</a
+          ><a
+            href="https://github.com/MPJHorner/Wow-Whatsapp-Addon/blob/main/THIRD_PARTY_NOTICES.md"
+            >Credits &amp; rights</a
+          >
+        </nav>
+      </div>
+      <p>
+        An independent fan project by
+        <a href="https://github.com/MPJHorner">Matt Horner</a> and contributors.
+        World of Warcraft artwork and the Quadrata font belong to Blizzard
+        Entertainment. WhatsApp and related marks belong to their respective
+        owners. No affiliation, endorsement or approval is claimed.
+      </p>
+      <p class="fine-print">
+        Demo conversations and portraits are fictional. The illustrated backdrop
+        is original generated fantasy art, not a game screenshot.
+        <a
+          href="https://github.com/MPJHorner/Wow-Whatsapp-Addon/blob/main/site/assets/NOTICE.md"
+          >Artwork provenance</a
+        >
+        · This website uses no added visitor analytics. Its release information
+        comes from GitHub's public API.
+      </p>
+    </footer>
+    <dialog id="screenshot-dialog" aria-labelledby="screenshot-title">
+      <div class="dialog-top">
+        <h2 id="screenshot-title">Fictional chat demo</h2>
+        <button
+          type="button"
+          class="dialog-close"
+          aria-label="Close screenshot"
+        >
+          ×
+        </button>
+      </div>
+      <img id="enlarged-screenshot" width="1000" height="730" alt="" />
+      <p>Fictional conversation · Production skin, sample chat layout</p>
+    </dialog>
+  </body>
+</html>

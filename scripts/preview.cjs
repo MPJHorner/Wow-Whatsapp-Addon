@@ -1,8 +1,16 @@
-// Local design preview. All names, avatars and messages below are sample data.
+// Local design preview. All names, avatars and messages are fictional sample data.
 // Uses the production frame and theme; never connects to a WhatsApp account.
 const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
+const args = process.argv.slice(2);
+if (args.length && (args.length !== 2 || args[0] !== '--scenario')) {
+  throw new Error('Usage: node scripts/preview.cjs [--scenario <id>]');
+}
+const standalone = args.length > 0;
+const demos = JSON.parse(fs.readFileSync(path.join(root, 'site/demos.json'), 'utf8'));
+const scenario = demos.find(demo => demo.id === (args[1] || 'date-night'));
+if (!scenario) throw new Error(`Unknown scenario. Choose: ${demos.map(demo => demo.id).join(', ')}`);
 function textures(source) {
   source = source.replaceAll('{{UI_FONT}}', 'data:font/woff2;base64,' + fs.readFileSync(path.join(root, 'assets/wow/BlizzQuadrata.woff2')).toString('base64'));
   for (const [token, file] of Object.entries({
@@ -30,6 +38,9 @@ function textures(source) {
 function escapeAttribute(text) {
   return text.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
 }
+function escapeText(text) {
+  return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+}
 const icons = {
   more: '<circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/>',
   search: '<circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/>',
@@ -48,14 +59,11 @@ const contacts = [
   ['Natasha', 'Is “one more pull” a unit of time?', '18:42'],
   ['Irina', 'Coffee > cooldowns.', '17:16'],
 ];
-const messages = [
-  ['in', 'Friday night. Dinner. You and me? 🍷', '20:04'],
-  ['out', 'I can’t. We’re raiding.', '20:05'],
-  ['in', 'You’re choosing a dragon over me?', '20:05'],
-  ['out', 'In my defence, the dragon might drop a mount.', '20:06'],
-  ['in', 'So does my car. It drops you outside the restaurant.', '20:07'],
-  ['out', 'Brb. Telling the guild I found a better loot table. ❤️', '20:08'],
-];
+const messages = scenario.messages;
+if (standalone) {
+  const lastMessage = messages.at(-1);
+  contacts[scenario.portrait] = [scenario.contact, lastMessage.text, lastMessage.time];
+}
 const sprite = 'data:image/png;base64,' + fs.readFileSync(path.join(root, 'docs/assets/demo-portraits.png')).toString('base64');
 const theme = textures(fs.readFileSync(path.join(root, 'assets/whatsapp-theme.css'), 'utf8'));
 const chat = textures(`<!doctype html><html lang="en"><head><meta charset="utf-8"><style>
@@ -64,10 +72,10 @@ const chat = textures(`<!doctype html><html lang="en"><head><meta charset="utf-8
 </style><style>${theme}</style></head><body><div id="app">
 <nav class="rail" aria-label="Sample navigation"><span class="active">${icon('chat')}</span>${icon('phone')}${icon('more')}<span class="bottom">${icon('emoji')}</span></nav>
 <div class="sidebar"><header><h1>Chats</h1>${button('plus','New chat')}${button('more','Menu')}</header><div id="side"><div class="search">${icon('search')}<span>Search or start a new chat</span></div><div class="filters"><span class="selected">All</span><span>Unread</span><span>Favourites</span></div><div id="pane-side" role="grid">
-${contacts.map(([name, snippet, time], index) => `<div role="row"${index === 0 ? ' aria-selected="true"' : ''}>${avatar(index, name)}<div class="contact"><span title="${name}">${name}</span><p>${snippet}</p></div><span class="time">${time}</span></div>`).join('')}
+${contacts.map(([name, snippet, time], index) => `<div role="row"${index === scenario.portrait ? ' aria-selected="true"' : ''}>${avatar(index, name)}<div class="contact"><span title="${escapeAttribute(name)}">${escapeText(name)}</span><p>${escapeText(snippet)}</p></div><span class="time">${escapeText(time)}</span></div>`).join('')}
 </div><div class="sidebar-note">Ctrl+Shift+W · Show or hide</div></div></div>
-<section id="main"><header>${avatar(0,'Anya')}<div class="name"><span title="Anya">Anya</span><small>online</small></div>${button('phone','Call')}${button('search','Search conversation')}${button('more','Conversation menu')}</header>
-<div class="conversation"><div class="day">TODAY</div>${messages.map(([direction,text,time])=>`<div class="message-${direction}"><span class="selectable-text">${text}</span><div class="stamp">${time}${direction==='out'?'<span class="ticks">✓✓</span>':''}</div></div>`).join('')}</div>
+<section id="main"><header>${avatar(scenario.portrait,scenario.contact)}<div class="name"><span title="${escapeAttribute(scenario.contact)}">${escapeText(scenario.contact)}</span><small>online</small></div>${button('phone','Call')}${button('search','Search conversation')}${button('more','Conversation menu')}</header>
+<div class="conversation"><div class="day">TODAY</div>${messages.map(({direction,text,time})=>`<div class="message-${direction}"><span class="selectable-text">${escapeText(text)}</span><div class="stamp">${escapeText(time)}${direction==='out'?'<span class="ticks">✓✓</span>':''}</div></div>`).join('')}</div>
 <footer>${button('plus','Attach')}${button('emoji','Emoji')}<div class="compose">Type a message</div>${button('mic','Voice message')}</footer></section>
 </div></body></html>`);
 let frame = textures(fs.readFileSync(path.join(root, 'assets/frame.html'), 'utf8')).replaceAll('{{HOTKEY}}', 'Ctrl+Shift+W');
@@ -75,5 +83,6 @@ frame = frame.replace("default-src 'none';", "default-src 'none'; frame-src 'sel
 frame = frame.replace('<div class="well" aria-hidden="true"></div>', `<iframe title="Fictional demo conversation" sandbox="" class="well" style="width:calc(100% - 40px);height:calc(100% - 84px);border:0" srcdoc="${escapeAttribute(chat)}"></iframe>`);
 const preview = textures(`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>WoW Whisper · fictional demo</title><meta name="description" content="A fictional preview of the open-source WoW WhatsApp desktop companion, with Warcraft styling and a raid-night conversation."><style>@font-face{font-family:'WoW UI';src:url('{{UI_FONT}}') format('woff2');font-weight:400}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#0d0e10}body{color:#d4c5a7;font:12px Arial,sans-serif}#preview{width:1120px;padding:24px 60px;background:radial-gradient(ellipse at top,#312a1d 0, #141414 55%,#0d0e10 100%)}.masthead{display:flex;align-items:baseline;justify-content:space-between;margin:0 0 18px}.masthead strong{font:21px 'WoW UI',serif;color:#e6c16c}.masthead span{color:#b2a58c;font-size:12px}iframe{display:block;width:1000px;height:730px;border:0;box-shadow:0 15px 32px #0008}p{margin:18px 0 0;text-align:center;color:#9a8e79;font-size:11px;line-height:1.5}</style></head><body><main id="preview"><div class="masthead"><strong>WoW Whisper</strong><span>One more pull. One less missed message.</span></div><iframe title="WoW Whisper production frame with fictional content" srcdoc="${escapeAttribute(frame)}"></iframe><p>Fictional demo · Sample chat layout · Generated adult portraits · No real messages</p></main></body></html>`);
 fs.mkdirSync(path.join(root, 'dist'), {recursive:true});
-fs.writeFileSync(path.join(root, 'dist/preview.html'), preview);
-console.log(path.join(root, 'dist/preview.html'));
+const output = path.join(root, standalone ? `dist/demo-${scenario.id}.html` : 'dist/preview.html');
+fs.writeFileSync(output, standalone ? frame : preview);
+console.log(output);

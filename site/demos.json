@@ -1,0 +1,113 @@
+[
+  {
+    "id": "date-night",
+    "title": "A better loot table.",
+    "kicker": "Raid night meets date night",
+    "description": "Anya has a compelling alternative to one more pull. Fictional conversation shown in the production frame and theme.",
+    "contact": "Anya",
+    "portrait": 0,
+    "messages": [
+      {
+        "direction": "in",
+        "text": "Friday night. Dinner. You and me? 🍷",
+        "time": "20:04"
+      },
+      {
+        "direction": "out",
+        "text": "I can’t. We’re raiding.",
+        "time": "20:05"
+      },
+      {
+        "direction": "in",
+        "text": "You’re choosing a dragon over me?",
+        "time": "20:05"
+      },
+      {
+        "direction": "out",
+        "text": "In my defence, the dragon might drop a mount.",
+        "time": "20:06"
+      },
+      {
+        "direction": "in",
+        "text": "So does my car. It drops you outside the restaurant.",
+        "time": "20:07"
+      },
+      {
+        "direction": "out",
+        "text": "Brb. Telling the guild I found a better loot table. ❤️",
+        "time": "20:08"
+      }
+    ],
+    "image": "assets/demo-date-night.png"
+  },
+  {
+    "id": "dinner-aggro",
+    "title": "Dinner has an enrage timer.",
+    "kicker": "The real time-limited event",
+    "description": "Katya reports a critical drop in pizza temperature. Fictional conversation shown in the production frame and theme.",
+    "contact": "Katya",
+    "portrait": 1,
+    "messages": [
+      {
+        "direction": "in",
+        "text": "Food’s here. It’s getting cold.",
+        "time": "19:54"
+      },
+      {
+        "direction": "out",
+        "text": "Can’t move. Boss at 2%.",
+        "time": "19:54"
+      },
+      { "direction": "in", "text": "Pizza at 2°C.", "time": "19:55" },
+      { "direction": "out", "text": "Save me two slices?", "time": "19:55" },
+      {
+        "direction": "in",
+        "text": "Consider them a timed event.",
+        "time": "19:56"
+      },
+      {
+        "direction": "out",
+        "text": "Brb. I’m about to lose my food buff.",
+        "time": "19:56"
+      }
+    ],
+    "image": "assets/demo-dinner-aggro.png"
+  },
+  {
+    "id": "keyboard-cat",
+    "title": "Your cat has entered the raid.",
+    "kicker": "Unscheduled keyboard mechanics",
+    "description": "Natasha discovers a new tank with expensive tastes. Fictional conversation shown in the production frame and theme.",
+    "contact": "Natasha",
+    "portrait": 2,
+    "messages": [
+      {
+        "direction": "in",
+        "text": "Your cat is on my keyboard.",
+        "time": "18:42"
+      },
+      { "direction": "out", "text": "Is he tanking?", "time": "18:42" },
+      {
+        "direction": "in",
+        "text": "He’s written fffffffffffff.",
+        "time": "18:43"
+      },
+      {
+        "direction": "out",
+        "text": "Finally. Someone in this house interrupts.",
+        "time": "18:43"
+      },
+      {
+        "direction": "in",
+        "text": "He just ordered 40 tins of tuna.",
+        "time": "18:44"
+      },
+      {
+        "direction": "out",
+        "text": "Stop him before he opens the auction house.",
+        "time": "18:44"
+      }
+    ],
+    "image": "assets/demo-keyboard-cat.png"
+  }
+]

@@ -1,11 +1,11 @@
 <div align="center">
 
-# WoW WhatsApp Addon · WoW Whisper
+# WoW WhatsApp Addon for Mac & Windows · WoW Whisper
 
 **One more pull. One less missed message.**
 
-WhatsApp beside your raid, dressed for Azeroth.
-A free desktop companion for **Windows and macOS**, built in Rust.
+Use WhatsApp while playing **World of Warcraft**.
+A free Warcraft-styled desktop companion for **Windows and macOS**, built in Rust.
 
 [![Build](https://github.com/MPJHorner/Wow-Whatsapp-Addon/actions/workflows/build.yml/badge.svg)](https://github.com/MPJHorner/Wow-Whatsapp-Addon/actions/workflows/build.yml)
 [![Latest release](https://img.shields.io/github/v/release/MPJHorner/Wow-Whatsapp-Addon?color=c8a45d&label=download)](https://github.com/MPJHorner/Wow-Whatsapp-Addon/releases/latest)
@@ -13,7 +13,7 @@ A free desktop companion for **Windows and macOS**, built in Rust.
 [![Source license: MIT](https://img.shields.io/badge/source-MIT-c8a45d)](LICENSE)
 [![Platforms](https://img.shields.io/badge/macOS%20%7C%20Windows-Rust-242424)](#download)
 
-[**Download**](https://github.com/MPJHorner/Wow-Whatsapp-Addon/releases/latest) · [Install](#install) · [How it works](#how-it-connects) · [FAQ](#faq) · [Contribute](CONTRIBUTING.md)
+[**Explore the website**](https://mpjhorner.github.io/Wow-Whatsapp-Addon/) · [Download](https://github.com/MPJHorner/Wow-Whatsapp-Addon/releases/latest) · [Install](https://mpjhorner.github.io/Wow-Whatsapp-Addon/install/) · [How it works](#how-it-connects) · [FAQ](#faq) · [Contribute](CONTRIBUTING.md)
 
 ![WoW WhatsApp addon demo: a Warcraft-styled chat window with fictional profile photos and a date-night-versus-raid-night conversation](docs/assets/wow-whatsapp-demo.png)
 
@@ -21,9 +21,10 @@ A free desktop companion for **Windows and macOS**, built in Rust.
 
 </div>
 
-WoW Whisper brings **WhatsApp to World of Warcraft** in a movable, resizable panel:
-metal borders, stone textures, gold headings and soft pink chat text. Your contacts'
-real profile pictures, emoji and media stay in WhatsApp Web.
+**WoW Whisper is a free, open-source WhatsApp desktop companion for World of
+Warcraft on Mac and Windows.** It brings official WhatsApp Web into a movable,
+resizable panel with metal borders, stone textures, gold headings and soft pink
+chat text. Your contacts' real profile pictures, emoji and media stay in WhatsApp Web.
 
 It is a **separate desktop companion** that sits above WoW, with no Dock or taskbar
 entry. It feels like an addon, but does not install into `Interface/AddOns` or run
@@ -159,13 +160,28 @@ WebView updated and hide private chats before streaming. [Security details →](
 
 ## FAQ
 
-### Is this the best WoW WhatsApp addon for me?
+### What is the best WoW addon for WhatsApp?
 
-If you want **WhatsApp while playing WoW**, Warcraft styling, no Dock/taskbar entry,
-and Mac or Windows support, WoW Whisper is designed for that use. “Best WoW WhatsApp
-addon” depends on what you need: this is an independent desktop companion, not a
-ranked or officially endorsed Lua addon. Start with the [features](#what-you-get)
-and [current limits](#current-limits).
+WoW Whisper is designed for players who want **WhatsApp while playing WoW**,
+Warcraft styling, no Dock/taskbar entry, and Mac or Windows support. The best fit
+depends on your setup: it is a separate desktop companion for windowed or
+borderless WoW, with official WhatsApp Web handling your chats. Compare the
+[features](#what-you-get) and [current limits](#current-limits), or try the
+[fictional chat demos](https://mpjhorner.github.io/Wow-Whatsapp-Addon/#encounters).
+
+### How do I use WhatsApp in WoW?
+
+Download WoW Whisper for your computer, open it, and link your phone using
+WhatsApp's Linked devices QR flow. Run World of Warcraft in windowed or borderless
+mode and keep the chat panel visible. **Ctrl+Shift+W** shows or hides it. Follow
+the [Mac and Windows installation guide](https://mpjhorner.github.io/Wow-Whatsapp-Addon/install/)
+for requirements, security prompts and troubleshooting.
+
+### Is there a WoW WhatsApp companion for Mac?
+
+WoW Whisper provides native Apple Silicon and Intel Mac builds for macOS 14 or
+later, alongside Windows 10/11 x64 builds. Mac uses the built-in WKWebView;
+Windows requires Microsoft WebView2. Choose the matching [download](#download).
 
 ### Is this a real World of Warcraft addon?
 

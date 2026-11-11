@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>WoW Whisper social preview artwork</title>
+    <style>
+      @font-face {
+        font-family: Quadrata;
+        src: url("assets/wow/BlizzQuadrata.woff2") format("woff2");
+        font-weight: 400;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #10180e url("assets/azeroth-evening.jpg") center/cover;
+        color: #eee3c8;
+        font-family: Arial, sans-serif;
+      }
+      .shade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, #0b140dee, #0b130cc9 44%, #10180e22);
+      }
+      .brand {
+        position: absolute;
+        left: 52px;
+        top: 38px;
+        display: flex;
+        gap: 13px;
+        align-items: center;
+        font: 28px Quadrata;
+      }
+      .brand img {
+        width: 43px;
+        height: 47px;
+      }
+      .copy {
+        position: absolute;
+        left: 54px;
+        top: 162px;
+        width: 520px;
+      }
+      .eyebrow {
+        font-size: 11px;
+        letter-spacing: 2.4px;
+        color: #d9b96e;
+        margin: 0 0 25px;
+      }
+      .copy h1 {
+        font: 72px/1.08 Quadrata;
+        margin: 0;
+        letter-spacing: -2px;
+        text-shadow: 0 3px 10px #0008;
+      }
+      .copy em {
+        font-style: normal;
+        color: #d7b66f;
+      }
+      .sub {
+        font-size: 17px;
+        line-height: 1.7;
+        max-width: 440px;
+        margin-top: 26px;
+        color: #c8c9b1;
+      }
+      .app {
+        position: absolute;
+        left: 576px;
+        top: 128px;
+        width: 596px;
+        height: auto;
+        filter: drop-shadow(0 15px 18px #000a);
+      }
+      .bottom {
+        position: absolute;
+        bottom: 36px;
+        left: 54px;
+        font-size: 12px;
+        color: #c7bd9a;
+      }
+      .caption {
+        position: absolute;
+        bottom: 42px;
+        right: 44px;
+        font-size: 10px;
+        color: #b4ad94;
+      }
+      .rule {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: #ad8d48;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shade"></div>
+    <div class="rule"></div>
+    <div class="brand"><img src="assets/crest.svg" alt="" />WoW Whisper</div>
+    <div class="copy">
+      <p class="eyebrow">WHATSAPP FOR WORLD OF WARCRAFT</p>
+      <h1>Real life<br />just <em>whispered.</em></h1>
+      <p class="sub">
+        Your chats, dressed for Azeroth.<br />One less reason to tab out.
+      </p>
+    </div>
+    <img
+      class="app"
+      src="assets/demo-date-night.png"
+      alt="Fictional chat demo"
+    />
+    <div class="bottom">
+      FREE &amp; OPEN SOURCE &nbsp; ◆ &nbsp; WINDOWS + macOS
+    </div>
+    <div class="caption">Fictional conversation · Sample chat layout</div>
+  </body>
+</html>

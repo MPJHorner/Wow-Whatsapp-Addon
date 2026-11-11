@@ -43,3 +43,7 @@ All demo contacts, conversations and portraits are fictional. The adult portrait
 were generated for this project; they are not account photos or testimonials.
 See [demo asset provenance](docs/assets/NOTICE.md). No real chat screenshots or
 WhatsApp session data are included in the public demo.
+
+The GitHub Pages website also uses an original generated fantasy backdrop and an
+original chat-shield crest. Website illustrations are not game screenshots or
+official logos. [Website artwork and prompt](site/assets/NOTICE.md).
